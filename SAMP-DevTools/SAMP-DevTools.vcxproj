@@ -97,12 +97,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="window\source\ColorEditWindow.cpp" />
+    <ClCompile Include="window\source\DialogWindow.cpp" />
+    <ClCompile Include="window\source\ChatMessageWindow.cpp" />
+    <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imgui_demo.cpp" />
+    <ClCompile Include="imgui\imgui_draw.cpp" />
+    <ClCompile Include="imgui\imgui_impl_dx9.cpp" />
+    <ClCompile Include="imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="imgui\imgui_tables.cpp" />
+    <ClCompile Include="imgui\imgui_widgets.cpp" />
+    <ClCompile Include="imgui_api\ImGuiApi.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="window\source\AWindow.cpp" />
+    <ClCompile Include="window\source\MainWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="SFAPI\SAMPFUNCS.lib" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="window\include\ColorEditWindow.h" />
+    <ClInclude Include="window\include\DialogWindow.h" />
+    <ClInclude Include="window\include\ChatMessageWindow.h" />
     <ClInclude Include="game_api\game\C3DMarker.h" />
     <ClInclude Include="game_api\game\C3DMarkers.h" />
     <ClInclude Include="game_api\game\CAERadioTrackManager.h" />
@@ -254,6 +270,15 @@
     <ClInclude Include="game_api\sdk\UTF8.h" />
     <ClInclude Include="game_api\sdk\WString.h" />
     <ClInclude Include="game_api\sdk\WString.hpp" />
+    <ClInclude Include="imgui\imconfig.h" />
+    <ClInclude Include="imgui\imgui.h" />
+    <ClInclude Include="imgui\imgui_impl_dx9.h" />
+    <ClInclude Include="imgui\imgui_impl_win32.h" />
+    <ClInclude Include="imgui\imgui_internal.h" />
+    <ClInclude Include="imgui\imstb_rectpack.h" />
+    <ClInclude Include="imgui\imstb_textedit.h" />
+    <ClInclude Include="imgui\imstb_truetype.h" />
+    <ClInclude Include="imgui_api\ImGuiApi.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="SFAPI\SAMPFUNCS_API.h" />
     <ClInclude Include="SFAPI\SFCLEO.h" />
@@ -261,6 +286,9 @@
     <ClInclude Include="SFAPI\SFRakNet.h" />
     <ClInclude Include="SFAPI\SFRender.h" />
     <ClInclude Include="SFAPI\SFSAMP.h" />
+    <ClInclude Include="window\include\AWindow.h" />
+    <ClInclude Include="window\include\IWindow.h" />
+    <ClInclude Include="window\include\MainWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

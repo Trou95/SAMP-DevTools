@@ -1,6 +1,16 @@
 #include "main.h"
 
-SAMPFUNCS *SF = new SAMPFUNCS();
+SAMPFUNCS* SF = new SAMPFUNCS();
+
+int key_timer = 0;
+
+void Clear()
+{
+	if (SF)
+		delete SF;
+	for (auto window : ImGuiApi::getWindows())
+		delete window;
+}
 
 void CALLBACK mainloop()
 {
@@ -13,9 +23,25 @@ void CALLBACK mainloop()
 			return;
 		if (!SF->getSAMP()->IsInitialized())
 			return;
-		SF->getSAMP()->getChat()->AddChatMessage( D3DCOLOR_XRGB( 0, 0xAA, 0 ), "SAMPFUNCS Plugin loaded." );
-
+		if(SF->getSAMP()->getInfo()->iGameState != GAMESTATE_CONNECTED)
+			return;
+		SF->getSAMP()->getChat()->AddChatMessage(0xFF2F96F3, "| SAMP-Devtools v1.0 | {FFFFFF}loaded successfully");
+		ImGuiApi::Init();
+		ImGuiApi::addWindow(new MainWindow("SAMP DevTools"));
+		ImGuiApi::addWindow(new ChatMessageWindow("Chat Message"));
+		ImGuiApi::addWindow(new DialogWindow("Dialog Window"));
+		ImGuiApi::addWindow(new ColorEditWindow("Color"));
 		init = true;
+	}
+	else 
+	{
+		//TODO: implement key event
+		if (SF->getGame()->isKeyDown(VK_F5) && key_timer < GetTickCount())
+		{
+			key_timer = GetTickCount() + 500;
+			ImGuiApi::getWindows()[0]->ToggleVisible();
+			SF->getSAMP()->getMisc()->ToggleCursor(ImGuiApi::getWindows()[0]->IsVisible());
+		}
 	}
 }
 

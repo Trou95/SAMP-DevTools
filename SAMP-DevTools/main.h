@@ -9,3 +9,4 @@
 
 #include "SAMPFUNCS_API.h"
 #include "game_api\game_api.h"
+#include "imgui_api/ImGuiApi.h"

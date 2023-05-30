@@ -56,12 +56,12 @@ struct API stCommandInfo
 	};
 };
 
-#include "SFAPI\SF_Types.h"
-#include "SFAPI\SFRender.h"
-#include "SFAPI\SFRakNet.h"
-#include "SFAPI\SFSAMP.h"
-#include "SFAPI\SFCLEO.h"
-#include "SFAPI\SFGame.h"
+#include "SF_Types.h"
+#include "SFRender.h"
+#include "SFRakNet.h"
+#include "SFSAMP.h"
+#include "SFCLEO.h"
+#include "SFGame.h"
 
 class API SAMPFUNCS
 {
