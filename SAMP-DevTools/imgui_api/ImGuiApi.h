@@ -27,6 +27,7 @@ class ImGuiApi
 
 		static bool CALLBACK WndProcHandler(HWND hwd, UINT msg, WPARAM wParam, LPARAM lParam);
 		static bool CALLBACK Present(CONST RECT* pSourceRect, CONST RECT* pDestRect, HWND hDestWindowOverride, CONST RGNDATA* pDirtyRegion);
+		static bool CALLBACK Reset(D3DPRESENT_PARAMETERS* pPresentationParameters);
 
 	public:
 		static void Init();

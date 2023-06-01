@@ -21,6 +21,7 @@ void ImGuiApi::Init()
 	ImGui_ImplDX9_Init(pDevice);
 
 	SF->getRender()->registerD3DCallback(D3DMETHOD_PRESENT, Present);
+	SF->getRender()->registerD3DCallback(D3DMETHOD_RESET, Reset);
 	SF->getGame()->registerWndProcCallback(SFGame::MEDIUM_CB_PRIORITY, WndProcHandler);
 	init = true;
 }
@@ -61,6 +62,12 @@ bool CALLBACK ImGuiApi::Present(CONST RECT* pSourceRect, CONST RECT* pDestRect, 
 	ImGui::Render();
 	ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
 
+	return true;
+}
+
+bool CALLBACK ImGuiApi::Reset(D3DPRESENT_PARAMETERS* pPresentationParameters)
+{
+	ImGui_ImplDX9_InvalidateDeviceObjects();
 	return true;
 }
 
